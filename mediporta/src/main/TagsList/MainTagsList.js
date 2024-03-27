@@ -1,0 +1,27 @@
+import React from "react";
+import getTags from "../../API/getTags";
+import { useEffect, useState } from "react";
+import Progres from "./Progres";
+import TagsList from "./TagsList";
+
+const MainTagsList = () => {
+    const [dataTags, setDataTags] = useState(false)
+
+    useEffect(() => {
+        console.log('komponent zamontowany');
+        const fetchData = async () => {
+            const data = await getTags();
+            setDataTags(data)
+        }
+
+        fetchData()
+    }, [])
+    
+    return (
+        <>
+            { !dataTags ? <Progres /> : <TagsList paginationLength={dataTags.items.length}/>}
+        </>
+    )
+}
+
+export default MainTagsList
