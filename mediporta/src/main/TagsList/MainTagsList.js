@@ -8,7 +8,6 @@ const MainTagsList = () => {
     const [dataTags, setDataTags] = useState(false)
 
     useEffect(() => {
-        console.log('komponent zamontowany');
         const fetchData = async () => {
             const data = await getTags();
             setDataTags(data)
