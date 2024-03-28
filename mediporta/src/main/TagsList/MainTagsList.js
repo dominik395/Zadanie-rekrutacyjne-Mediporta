@@ -18,7 +18,11 @@ const MainTagsList = () => {
     
     return (
         <>
-            { !dataTags ? <Progres /> : <TagsList paginationLength={dataTags.items.length}/>}
+            { !dataTags ? <Progres /> : 
+            <TagsList 
+                paginationLength={dataTags.items.length} 
+                dataItems={dataTags.items}
+                list={dataTags.items}/>}
         </>
     )
 }

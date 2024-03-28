@@ -1,19 +1,21 @@
-import React, { useState } from "react";
-import Typography from '@mui/material/Typography';
+import React from "react";
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
 
-const PaginationList = ({ paginationLength }) => {
-    const [page, setPage] = useState(1)
+const PaginationList = ({ page, paginationLength, changePage }) => {
     const handleChange = (event, value) => {
-        setPage(value);
+        changePage(value - 1)
       };
 
     return (
         <>
             <Stack spacing={2}>
-                <Typography>Page: {page}</Typography>
-                <Pagination count={paginationLength} page={page} onChange={handleChange} size="large" color="primary" />
+                <Pagination 
+                    count={paginationLength} 
+                    page={page + 1} 
+                    onChange={handleChange} 
+                    size="large" 
+                    color="primary" />
             </Stack>
         </>
     )

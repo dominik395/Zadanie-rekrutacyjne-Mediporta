@@ -17,7 +17,7 @@ const SelectLengthList = ({ maxLengthList }) => {
           Ilość Wierszy
         </InputLabel>
         <NativeSelect
-          defaultValue={10}
+          defaultValue={5}
           inputProps={{
             name: 'listLength',
             id: 'uncontrolled-native',
@@ -25,6 +25,7 @@ const SelectLengthList = ({ maxLengthList }) => {
           sx={{ '& select': { paddingY: '12px', fontSize: '1.25rem' } }}
           onChange={handleChange}
         >
+          <option value={5}>5</option>
           <option value={10}>10</option>
           <option value={20}>20</option>
           <option value={30}>30</option>
