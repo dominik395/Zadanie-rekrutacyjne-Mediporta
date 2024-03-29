@@ -3,15 +3,15 @@ import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableRow from '@mui/material/TableRow';
 
-const TagsTableBody = ({ page, rowsPerPage, list }) => {
-    const emptyRows = page > 0 ? Math.max(0, (1 + page) * rowsPerPage - list.length) : 0;
+const TagsTableBody = ({ page, rowsPerPage, tagsList }) => {
+    const emptyRows = page > 0 ? Math.max(0, (1 + page) * rowsPerPage - tagsList.length) : 0;
 
     return (
         <>
             <TableBody>
                 {(rowsPerPage > 0
-                    ? list.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                    : list
+                    ? tagsList.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                    : tagsList
                 ).map((row) => (
                     <TableRow
                         key={row.name}

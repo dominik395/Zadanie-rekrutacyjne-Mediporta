@@ -16,7 +16,7 @@ const TagsList = ({ paginationLength, list }) => {
             <div>
                 <SelectLengthList maxLengthList={(modulo) => setMaxLengthList(modulo)}/>
 
-                <Tags list={list} rowsPerPage={maxLengthList} page={page}/>
+                <Tags tagsList={list} rowsPerPage={maxLengthList} page={page}/>
                 
                 <PaginationList 
                     page={page}
