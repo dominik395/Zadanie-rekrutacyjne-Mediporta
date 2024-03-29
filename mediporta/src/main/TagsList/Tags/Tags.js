@@ -21,7 +21,7 @@ const Tags = ({ tagsList, rowsPerPage, page }) => {
             if (property === 'tagi') {
                 propA = a.name;
                 propB = b.name;
-            } else if (property === 'polubienia') {
+            } else if (property === 'powiazanePosty') {
                 propA = a.count;
                 propB = b.count;
             }

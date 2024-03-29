@@ -23,13 +23,13 @@ const TagsTableHead = ({ order, orderBy, onRequestSort }) => {
                         </TableSortLabel>
                     </TableCell>
 
-                    <TableCell sortDirection={orderBy === 'polubienia' ? order : false} style={{ width: '80px'}}>
+                    <TableCell sortDirection={orderBy === 'powiazanePosty' ? order : false} style={{ width: '80px'}}>
                         <TableSortLabel 
-                            active={orderBy === 'polubienia'}
-                            direction={orderBy === 'polubienia' ? order : 'asc'}
-                            onClick={createSortHandler('polubienia')}
+                            active={orderBy === 'powiazanePosty'}
+                            direction={orderBy === 'powiazanePosty' ? order : 'asc'}
+                            onClick={createSortHandler('powiazanePosty')}
                         >
-                            Polubienia
+                            Powiązane posty
                         </TableSortLabel>
                     </TableCell>
                 </TableRow>
