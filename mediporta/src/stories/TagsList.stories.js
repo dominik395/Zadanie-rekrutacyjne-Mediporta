@@ -25,7 +25,8 @@ ToManyPage.args = {
     list: [
         {name: 'C#', count: 200},
         {name: '.net', count: 600},
-        {name: 'Ruby', count: 300}
+        {name: 'Ruby', count: 300},
+        {name: 'JavaScript', count: 100}
     ],
     paginationLength: 10
 }
