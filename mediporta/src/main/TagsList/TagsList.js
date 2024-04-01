@@ -4,8 +4,10 @@ import SelectLengthList from "./SelectLengthList";
 import Tags from "./Tags/Tags";
 
 const TagsList = ({ paginationLength, list }) => {
+    console.log(paginationLength, list)
     const [maxLengthList, setMaxLengthList] = useState(5)
     const [page, setPage] = useState(0)
+    const optionsLength = [5, 10, 20, 30]
 
     useEffect(() => {
         setPage(0)
@@ -14,7 +16,7 @@ const TagsList = ({ paginationLength, list }) => {
     return (
         <>
             <div>
-                <SelectLengthList maxLengthList={(modulo) => setMaxLengthList(modulo)}/>
+                <SelectLengthList maxLengthList={(modulo) => setMaxLengthList(modulo)} options={optionsLength}/>
 
                 <Tags tagsList={list} rowsPerPage={maxLengthList} page={page}/>
                 

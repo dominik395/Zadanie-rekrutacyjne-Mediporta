@@ -4,8 +4,7 @@ import InputLabel from '@mui/material/InputLabel';
 import FormControl from '@mui/material/FormControl';
 import NativeSelect from '@mui/material/NativeSelect';
 
-const SelectLengthList = ({ maxLengthList }) => {
-
+const SelectLengthList = ({ maxLengthList, options }) => {
   const handleChange = (event) => {
     maxLengthList(+event.target.value)
   }
@@ -17,7 +16,7 @@ const SelectLengthList = ({ maxLengthList }) => {
           Ilość Wierszy
         </InputLabel>
         <NativeSelect
-          defaultValue={5}
+          defaultValue={options}
           inputProps={{
             name: 'listLength',
             id: 'uncontrolled-native',
@@ -25,10 +24,10 @@ const SelectLengthList = ({ maxLengthList }) => {
           sx={{ '& select': { paddingY: '12px', fontSize: '1.25rem' } }}
           onChange={handleChange}
         >
-          <option value={5}>5</option>
-          <option value={10}>10</option>
-          <option value={20}>20</option>
-          <option value={30}>30</option>
+          <option value={options[0]}>{options[0]}</option>
+          <option value={options[1]}>{options[1]}</option>
+          <option value={options[2]}>{options[2]}</option>
+          <option value={options[3]}>{options[3]}</option>
         </NativeSelect>
       </FormControl>
     </Box>

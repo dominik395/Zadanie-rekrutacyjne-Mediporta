@@ -11,7 +11,6 @@ const MainTagsList = () => {
     useEffect(() => {
         const fetchData = async () => {
             const data = await getTags();
-            console.log(data, ' z useEffect')
             setDataTags(data)
         }
 
@@ -27,7 +26,6 @@ const MainTagsList = () => {
                 ? <AlertView error_message={dataTags.data.error_message}/>
                 : <TagsList 
                     paginationLength={dataTags.data.items.length}
-                    dataItems={dataTags.data.items}
                     list={dataTags.data.items}/>}
                 </>}
         </>
