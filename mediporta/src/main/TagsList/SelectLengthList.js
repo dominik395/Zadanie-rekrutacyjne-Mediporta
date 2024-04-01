@@ -9,6 +9,13 @@ const SelectLengthList = ({ maxLengthList, options }) => {
     maxLengthList(+event.target.value)
   }
 
+  const checkOptionsIsNumber = () => {
+    if (options.length === 0) {
+      return false
+    } 
+    return options.every(el => typeof +el === 'number')
+  }
+
   return (
     <Box sx={{ minWidth: 120 }}>
       <FormControl fullWidth>
@@ -16,7 +23,7 @@ const SelectLengthList = ({ maxLengthList, options }) => {
           Ilość Wierszy
         </InputLabel>
         <NativeSelect
-          defaultValue={options}
+          defaultValue={options[0]}
           inputProps={{
             name: 'listLength',
             id: 'uncontrolled-native',
@@ -24,10 +31,9 @@ const SelectLengthList = ({ maxLengthList, options }) => {
           sx={{ '& select': { paddingY: '12px', fontSize: '1.25rem' } }}
           onChange={handleChange}
         >
-          <option value={options[0]}>{options[0]}</option>
-          <option value={options[1]}>{options[1]}</option>
-          <option value={options[2]}>{options[2]}</option>
-          <option value={options[3]}>{options[3]}</option>
+          {checkOptionsIsNumber() 
+          ? options.map((el, idx) => <option key={idx} value={+el}>{el}</option>) 
+          : <option value={5}>5</option>}
         </NativeSelect>
       </FormControl>
     </Box>
